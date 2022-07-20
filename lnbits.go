@@ -85,6 +85,6 @@ func (ln Lnbits) StatusInvoice(payment_hash string) (gjson.Result, error) {
 }
 
 func (ln Lnbits) DecodeInvoice(invoice string) (gjson.Result, error) {
-	data := map[string]interface{}{"invoice": invoice}
+	data := map[string]interface{}{"data": invoice}
 	return ln.Call("GET", "/v1/payments/decode", data)
 }
